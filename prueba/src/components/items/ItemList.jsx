@@ -1,0 +1,13 @@
+import React from "react";
+import Item from "./Item";
+
+export default function ItemList({ productos }) {
+  return (
+   <>
+    {productos.map((p) => (
+        <Item key={p.id} producto={p.producto} precio={p.precio} imagen={p.imagen} />
+    ))}
+   
+   </>    
+  )
+}
