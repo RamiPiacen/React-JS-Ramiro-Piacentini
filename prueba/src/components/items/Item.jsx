@@ -6,22 +6,22 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import ItemCount from '../ItemCount/ItemCount';
 
-export default function Item({id, producto, precio, imagen}) {
+export default function Item({ producto }) {
   return (
-    <Card key={id} sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={imagen}
+          src={producto.imagen}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {precio}
+            {producto.precio}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {producto}
+            {producto.nombre}
           </Typography>
         </CardContent>
       </CardActionArea>
