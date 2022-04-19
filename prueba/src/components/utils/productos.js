@@ -14,3 +14,21 @@ const productos = [
 ]
 
 export default productos;
+
+const producto =
+{
+    id: 1,
+    nombre: "MacBook",
+    precio: "$150.000",
+    stock:  1,
+    descripcion: "macbook con 1T de memoria en perfecto estado",
+    imagen: "https://cdn.pixabay.com/photo/2014/09/24/14/29/macbook-459196_960_720.jpg",
+}
+
+export const traerProducto = ()=>{
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(producto)
+        }, 2000)
+    })
+}

@@ -1,0 +1,9 @@
+.detalle{
+    display: flex;
+    margin: 0 auto;
+    max-width: 500px;
+
+}
+.imagen{
+    width: 100%;
+}
