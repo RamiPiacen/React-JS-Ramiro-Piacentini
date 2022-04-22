@@ -11,8 +11,9 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Icon from "./Icon";
 import s from "../components/NavBar.module.css"
+import { Link } from "react-router-dom";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Computadoras", "Teclados", "Auriculares","Mouses"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 export default function NavBar() {
@@ -44,7 +45,8 @@ export default function NavBar() {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            LOGO
+            {/* este es el logo */}
+            <Link to="/"><img className={s.imagen} src="https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_960_720.png" alt="logo" /></Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -89,7 +91,8 @@ export default function NavBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            LOGO
+            {/* es el otro logo(responsive) */}
+            <Link to="/"><img className={s.imagen} src="https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_960_720.png" alt="logo" /></Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
