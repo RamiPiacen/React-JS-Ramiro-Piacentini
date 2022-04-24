@@ -1,3 +1,7 @@
+*{
+    list-style-type: none;
+    text-decoration: none;
+}
 .ItemListContainer_card__9hcgc{
     display: flex;
     flex-wrap: wrap;

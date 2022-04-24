@@ -5,7 +5,7 @@ const customFetch = (time, task) => {
             if(itsOk){
             resolve(task)
             }else{
-                reject("error")
+            reject("error")
             }
         },time)})
 }

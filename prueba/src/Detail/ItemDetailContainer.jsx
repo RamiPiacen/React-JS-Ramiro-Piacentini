@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { traerProducto } from "../components/utils/productos";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import customFetch from "../components/utils/CustomFetch";
 
 export default function ItemDetailContainer() {
 
@@ -19,12 +18,11 @@ export default function ItemDetailContainer() {
   }, []);
   
   const {id} = useParams()
-
   useEffect(() => {
     if(producto === "auriculares"){
-      customFetch(producto.id)
+      setProducto({id:"1",name:"auriculares"})
     }else if(producto === "teclado"){
-      setProducto({id:"002",name:"teclado"})
+      setProducto({id:"2",name:"teclado"})
     }
   }, [id])
   

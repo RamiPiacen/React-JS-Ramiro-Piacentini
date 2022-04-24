@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Button } from '@mui/material'
 import s from './ItemCount.module.css'
+import { Link } from 'react-router-dom'
 
 
-export default function ItemCount({stock}) {
+export default function ItemCount({stock, id}) {
   const [contador, setContador] = useState(1)
   
   function agregar(){
@@ -17,9 +18,9 @@ export default function ItemCount({stock}) {
   }
 
   function onAdd(){
-    alert("agregaste "+ contador + " al carrito")
+    
   }
-
+  
   return (
     <>
     <div className={s.contenedor}>
@@ -29,7 +30,8 @@ export default function ItemCount({stock}) {
     <Button onClick={agregar} variant="contained"color="success">+</Button>
     </div>
     <div className={s.comprar}>
-    <Button  onClick={onAdd} variant="contained">Comprar</Button>
+      <Link to={"/item/" + id}><Button  onClick={onAdd} variant="contained">Comprar</Button></Link>
+    
     </div>
     </div>
 
