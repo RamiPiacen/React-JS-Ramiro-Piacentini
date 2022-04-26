@@ -4,7 +4,7 @@ import s from './ItemCount.module.css'
 import { Link } from 'react-router-dom'
 
 
-export default function ItemCount({stock, id}) {
+export default function ItemCount({stock, id, onAdd}) {
   const [contador, setContador] = useState(1)
   
   function agregar(){
@@ -17,9 +17,6 @@ export default function ItemCount({stock, id}) {
     setContador(contador - 1)}
   }
 
-  function onAdd(){
-    
-  }
   
   return (
     <>

@@ -3,6 +3,11 @@ import s from "./ItemDetail.module.css"
 import ItemCount from "../components/ItemCount/ItemCount"
 
 export default function ItemDetail({ producto }) {
+
+  function onAdd(){
+    alert("hola")
+  }
+
   return (
     <>
       <div className={s.detalle}>
@@ -12,7 +17,7 @@ export default function ItemDetail({ producto }) {
           <p>{producto.descripcion}</p>
           <h3>{producto.precio}</h3>
           <p>stock: {producto.stock}</p>
-          <ItemCount stock={5}/>
+          <ItemCount onAdd={onAdd}stock={5}/>
         </div>
       </div>
     </>
