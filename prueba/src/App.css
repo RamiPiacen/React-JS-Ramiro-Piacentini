@@ -10,3 +10,17 @@
     width: 250px;
     margin: 5px;
 }
+.css-1qp5wg9-MuiTypography-root{
+    color: antiquewhite !important;
+}
+a:-webkit-any-link{
+    color: antiquewhite !important;
+}
+.css-ke5b6m-MuiButtonBase-root-MuiButton-root {
+    min-width: 34px!important;
+    margin-left: 4px !important;
+}
+.css-1sszw6i-MuiButtonBase-root-MuiButton-root{
+    min-width: 34px !important;
+    margin-right: 4px !important;
+}

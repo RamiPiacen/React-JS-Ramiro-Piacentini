@@ -1,116 +1,55 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import Icon from "./Icon";
-import s from "../components/NavBar.module.css"
-import { Link } from "react-router-dom";
-
-const pages = ["Computadoras", "Teclados", "Auriculares","Mouses"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-export default function NavBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
+import s from "./NavBar.module.css"
+import  Icon  from './Icon';
+import { context } from '../Context/CartContext';
+import { useContext } from 'react';
+import productos from './utils/productos';
+export default function DenseAppBar() {
+  const {x} = useContext(context)
   return (
-    <AppBar position="static">
-      <Container className={s.nav} maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-          >
-            {/* este es el logo */}
-            <Link to="/"><img className={s.imagen} src="https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_960_720.png" alt="logo" /></Link>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar className={s.nav}  variant="dense">
+        <Link to="/">
+          <Typography  variant="h6" color="inherit" component="div">
+            <img className={s.imagen} src="https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_960_720.png" alt="logo" />
           </Typography>
+          </Link>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
-          >
-            {/* es el otro logo(responsive) */}
-            <Link to="/"><img className={s.imagen} src="https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_960_720.png" alt="logo" /></Link>
+          <Link to="Computadoras">
+          <Typography variant="h6" color="inherit" component="div">
+            Computadoras
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
+          </Link>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Icon cant={10} />
-          </Box>
+          <Link to="Teclados">
+          <Typography variant="h6" color="inherit" component="div">
+            Teclados
+          </Typography>
+          </Link>
+
+          <Link to="Auriculares">
+          <Typography variant="h6" color="inherit" component="div">
+            Auriculeres
+          </Typography>
+          </Link>
+
+          <Link to="Mouses">
+          <Typography variant="h6" color="inherit" component="div">
+            Mouses
+          </Typography>
+          </Link>
+
+          <Link to="/cart">
+            <Icon cant={productos.length}/>
+          </Link>
         </Toolbar>
-      </Container>
-    </AppBar>
+      </AppBar>
+    </Box>
   );
 }

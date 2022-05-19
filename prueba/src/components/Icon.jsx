@@ -6,9 +6,7 @@ export default function Icon({cant}) {
   
   return (
     <>
-
      🛒({cant})
-
     </>
   );
 }

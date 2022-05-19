@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 export default function ItemCount({stock, id, onAdd}) {
-  const [contador, setContador] = useState(1)
+  const [contador, setContador] = useState(0)
   
   function agregar(){
       if(contador < stock){

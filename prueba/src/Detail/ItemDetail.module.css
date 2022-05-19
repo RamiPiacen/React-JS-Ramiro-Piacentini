@@ -1,9 +1,10 @@
 .detalle{
     display: flex;
-    margin: 0 auto;
-    max-width: 500px;
-
+    justify-content: space-evenly;
+    margin-top: 10%;
 }
 .imagen{
-    width: 100%;
+    width: 500px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px;
 }

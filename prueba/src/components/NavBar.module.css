@@ -1,5 +1,10 @@
 .nav{
     background-color: black;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0px;
+    box-shadow: 2px;
+
 }
 .imagen{
     width: 40px;
